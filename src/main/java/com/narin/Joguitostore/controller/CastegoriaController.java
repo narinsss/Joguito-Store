@@ -30,7 +30,7 @@ public class CastegoriaController {
 	public ResponseEntity<List<Categoria>> getAll(){
 		return ResponseEntity.ok(repositoryC.findAll()) ;
 	}
-	@GetMapping("/{id}")
+	@GetMapping("/{id}" )
 	public ResponseEntity<Categoria> getById(@PathVariable Long id){
 		return repositoryC.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
